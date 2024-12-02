@@ -10,7 +10,9 @@
   line-height: 1.5;
 
   --primary: #D9D9D9;
-  --text: ;
+  --secondary: #f1f1f1;
+  --text: rgb(36,37,38);
+
   color: var(--text);
   background-color: var(--primary);
 

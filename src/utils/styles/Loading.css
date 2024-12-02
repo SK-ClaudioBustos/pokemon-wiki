@@ -1,0 +1,49 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-description {
+    color: var(--text);
+    animation: disapear 0.8s linear 0s infinite reverse;
+}
+
+@keyframes disapear {
+    0% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 50%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.loading-point {
+    background: var(--text);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+.circular-loading {
+    margin: 15px 0;
+    display: flex;
+    gap: 1rem;
+    animation: rotate .8s linear 0s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}

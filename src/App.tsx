@@ -1,5 +1,5 @@
-import { Title } from "@components/Title";
-import { SearchBar } from "@components/SearchBar";
+import { PokemonList, SearchBar, Title } from "@component";
+import "@styles/App.css";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
         <SearchBar />
       </header>
       <main>
-
+        <PokemonList />
       </main>
     </>
   )

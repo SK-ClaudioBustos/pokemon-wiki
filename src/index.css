@@ -8,10 +8,11 @@
 :root {
   font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  /* font-weight: 400; */
 
-  color: #000;
-  background-color: #f1f1f1;
+  --primary: #D9D9D9;
+  --text: ;
+  color: var(--text);
+  background-color: var(--primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

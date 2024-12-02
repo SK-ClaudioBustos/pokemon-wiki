@@ -1,0 +1,16 @@
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    font-size: medium;
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 250px;
+    border-radius: 17px;
+    padding: 10px 15px;
+    margin: 15px auto 20px;
+}

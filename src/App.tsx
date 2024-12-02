@@ -1,10 +1,17 @@
 import { Title } from "@components/Title";
+import { SearchBar } from "@components/SearchBar";
 
 function App() {
 
   return (
     <>
-      <Title />
+      <header>
+        <Title />
+        <SearchBar />
+      </header>
+      <main>
+
+      </main>
     </>
   )
 }

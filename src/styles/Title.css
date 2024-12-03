@@ -1,5 +1,6 @@
 .title {
     margin: 40px 0 0;
+    animation: faded 1s normal;
 }
 
 h2 {

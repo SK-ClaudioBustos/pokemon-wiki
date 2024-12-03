@@ -5,6 +5,7 @@
     grid-template-rows: repeat(auto-fill,minmax(125px,1fr));
     gap: 25px;
     padding: 50px 5vw;
+    animation: faded 1s normal;
 }
 
 .item {

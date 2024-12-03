@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Poppins';
-  src: url('@font/Poppins-Regular.ttf') format('ttf'); 
+  src: url('@font/Poppins-Regular.ttf') format('ttf');
   font-weight: 400;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
 
   --primary: #D9D9D9;
   --secondary: #f1f1f1;
-  --text: rgb(36,37,38);
+  --text: rgb(36, 37, 38);
 
   color: var(--text);
   background-color: var(--primary);
@@ -24,4 +24,28 @@
 
 * {
   box-sizing: border-box;
+}
+
+@keyframes faded {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes faded-slide {
+  0% {
+    scale: .5;
+    opacity: 0;
+    translate: 0 100px;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 100%;
+    translate: 0 0;
+  }
 }

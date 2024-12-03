@@ -1,7 +1,9 @@
 .item {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: center;
+    transition: .3s ease-in all;
     animation: faded-slide linear both;
     animation-timeline: view();
     animation-range: entry 10% cover 20%;

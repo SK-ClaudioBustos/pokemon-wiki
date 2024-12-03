@@ -1,5 +1,6 @@
-import { PokemonData } from "@/types/pokemons";
+import { useModalContext } from "@context";
 import "@styles/ListItem.css";
+import { PokemonData } from "@types";
 import { useState } from "react";
 
 interface Props {
@@ -8,13 +9,19 @@ interface Props {
 
 export const ListItem = ({ pokemon }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
+    const { setShowModal, setPokemonId } = useModalContext();
 
     const handleImageLoad = () => {
         setIsLoading(false);
     };
 
+    const handleClick = () => {
+        setShowModal(true);
+        setPokemonId(pokemon.id);
+    }
+
     return (
-        <div className="item">
+        <div className="item" onClick={handleClick}>
             <div>
                 {isLoading && (
                     <div className="placeholder">

@@ -2,12 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
       "@component": ["src/components"],
       "@styles/*": ["src/styles/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@utils/*": ["src/utils/*"],
-      "@context/*": ["src/context/*"],
+      "@util": ["src/utils"],
+      "@context": ["src/context"],
+      "@types": ["src/types"],
     },
     "moduleResolution": "node",
     "jsx": "react-jsx",

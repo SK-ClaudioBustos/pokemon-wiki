@@ -1,6 +1,6 @@
 import { FiltersSection, PokemonList, Title } from "@component";
+import { FilterProvider, ModalProvider } from "@context";
 import "@styles/App.css";
-import { FilterProvider } from "./context/filter.provider";
 
 function App() {
 
@@ -11,7 +11,9 @@ function App() {
         <FiltersSection />
       </header>
       <main>
-        <PokemonList />
+        <ModalProvider>
+          <PokemonList />
+        </ModalProvider>
       </main>
     </FilterProvider>
   )

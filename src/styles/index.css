@@ -11,11 +11,11 @@
 
   --primary: #D9D9D9;
   --secondary: #f1f1f1;
+  --tertiary: #EE4848;
   --text: rgb(36, 37, 38);
 
   color: var(--text);
-  /* background-color: var(--primary); */
-  background-image: radial-gradient(#c1c1c1 2px, var(--primary) 1px);
+  background-image: radial-gradient(var(--secondary) 1.5px, var(--primary) 1px);
   background-size: 20px 20px;
 
   font-synthesis: none;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface PokemonData {
     id: string;
     name: string;
@@ -5,7 +6,7 @@ export interface PokemonData {
 }
 
 export interface Generation {
-    abilities:       never[];
+    abilities:       any[];
     id:              number;
     main_region:     MainRegion;
     moves:           MainRegion[];

@@ -1,10 +1,9 @@
-import { useFilterContext } from "@/context/filter.context";
 import { useFetch } from "@/hooks/useFetch";
-import { Generation, MainRegion, PokemonData } from "@/types/pokemons";
-import { Loading } from "@/utils/Loading";
+import { ListItem, Modal, PokemonDetails } from "@component";
+import { useFilterContext } from "@context";
 import "@styles/PokemonList.css";
-import { ListItem } from "./ListItem";
-import { toCapitalize } from "@/utils/functions/capitalize";
+import { Generation, MainRegion, PokemonData } from "@types";
+import { Loading, toCapitalize } from "@util";
 
 export const PokemonList = () => {
     const { pokemonGeneration } = useFilterContext();
@@ -31,12 +30,17 @@ export const PokemonList = () => {
     })
 
     return (
-        <div className="grid">
-            {
-                pokemons.map((item) => (
-                    <ListItem key={item.id} pokemon={item} />
-                ))
-            }
-        </div>
+        <>
+            <div className="grid">
+                {
+                    pokemons.map((item) => (
+                        <ListItem key={item.id} pokemon={item} />
+                    ))
+                }
+            </div>
+            <Modal>
+                <PokemonDetails />
+            </Modal>
+        </>
     );
 }

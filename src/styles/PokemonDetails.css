@@ -1,0 +1,91 @@
+.details-header {
+    background-color: var(--tertiary);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+
+    span {
+        font-size: 1.5rem;
+    }
+}
+
+.details-content {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .details-img {
+        display: flex;
+        justify-content: center;
+
+
+        img {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 220;
+            height: 220px;
+            object-fit: cover;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+    }
+
+    div {
+        .details-stats {
+
+            ul {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 1rem;
+
+                    p {
+                        font-size: 10px;
+                        padding: 0;
+                        margin: 0;
+                        color: var(--i)
+                    }
+
+                    /* Fondo general */
+                    meter::-webkit-meter-bar {
+                        background: #ffffff;
+                    }
+
+                    /* Relleno en el rango óptimo */
+                    meter::-webkit-meter-optimum-value {
+                        background: var(--i);
+                    }
+
+                    /* Firefox */
+                    /* Color del relleno */
+                    meter::-moz-meter-bar {
+                        background: linear-gradient(90deg, #4caf50, #8bc34a);
+                    }
+                }
+            }
+        }
+
+        .details-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 20px;
+
+            .pokemon-type {
+                padding: .5px 10px;
+                background-color: var(--j);
+                border: 2px solid var(--k);
+                border-radius: 20px;
+                color: var(--k);
+            }
+        }
+    }
+}

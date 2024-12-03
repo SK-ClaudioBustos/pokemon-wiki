@@ -13,9 +13,13 @@
     z-index: 2;
 
     .modal {
-        min-height: 300px;
-        min-width: 450px;
         background-color: var(--primary);
         border-radius: 5px;
+    }
+}
+
+@media (max-width: 500px) {
+    .modal {
+        border-radius: 0px;
     }
 }

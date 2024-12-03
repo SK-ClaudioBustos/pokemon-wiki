@@ -74,7 +74,7 @@ export const PokemonDetails = () => {
                 <span>
                     {toCapitalize(pokemonData.name)}
                 </span>
-                <button type="button" className="close-button" onClick={() => setShowModal(false)}>X</button>
+                <button type="button" className="close-button" onClick={() => setShowModal(false)}>&times;</button>
             </div>
             <div className="details-content">
                 <div className="details-img">

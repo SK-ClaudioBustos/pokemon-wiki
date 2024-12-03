@@ -2,12 +2,16 @@ import { createContext, useContext } from "react";
 
 interface FilterContextType {
     pokemonGeneration: number | null
+    search: string | null
     setPokemonGeneration: React.Dispatch<React.SetStateAction<number>>
+    setSearch: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const FilterContext = createContext<FilterContextType>({
     pokemonGeneration: null,
-    setPokemonGeneration: () => { }
+    search: null,
+    setPokemonGeneration: () => { },
+    setSearch: () => {}
 })
 
 export const useFilterContext = () => {

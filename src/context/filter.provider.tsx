@@ -9,8 +9,8 @@ interface FilterProps {
 
 export const FilterProvider = ({ children }: FilterProps) => {
     const [pokemonGeneration, setPokemonGeneration] = useState(EmptyFilterState);
-
+    const [search, setSearch] = useState("");
     return (
-        <FilterContext.Provider value={{ pokemonGeneration, setPokemonGeneration }}>{children}</FilterContext.Provider>
+        <FilterContext.Provider value={{ search, pokemonGeneration, setPokemonGeneration, setSearch }}>{children}</FilterContext.Provider>
     )
 }

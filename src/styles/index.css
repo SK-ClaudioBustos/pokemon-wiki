@@ -15,7 +15,7 @@
   --text: rgb(36, 37, 38);
 
   color: var(--text);
-  background-image: radial-gradient(var(--secondary) 1.5px, var(--primary) 1px);
+  background-image: radial-gradient(#c1c1c1 1.5px, var(--primary) 1px);
   background-size: 20px 20px;
 
   font-synthesis: none;

@@ -1,0 +1,30 @@
+.select-generation {
+    font-size: medium;
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 250px;
+    border-radius: 17px;
+    color: var(--text);
+    height: 38.77px;
+}
+
+.select-generation:focus {
+    outline: none;
+    border-color: #c7d3e1;
+}
+
+.select-generation option {
+    background-color: #f0f0f0;
+    padding: 8px;
+    color: #333;
+}
+
+.select-generation option:hover {
+    background-color: #ddd;
+}
+
+.select-generation option:checked {
+    background-color: #99a3ae;
+    color: white;
+}

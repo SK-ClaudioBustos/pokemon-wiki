@@ -1,0 +1,17 @@
+.filters-container {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter label {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

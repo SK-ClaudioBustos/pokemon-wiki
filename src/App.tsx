@@ -1,18 +1,19 @@
-import { PokemonList, SearchBar, Title } from "@component";
+import { FiltersSection, PokemonList, Title } from "@component";
 import "@styles/App.css";
+import { FilterProvider } from "./context/filter.provider";
 
 function App() {
 
   return (
-    <>
+    <FilterProvider>
       <header>
         <Title />
-        <SearchBar />
+        <FiltersSection />
       </header>
       <main>
         <PokemonList />
       </main>
-    </>
+    </FilterProvider>
   )
 }
 

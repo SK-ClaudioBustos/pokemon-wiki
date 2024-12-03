@@ -8,6 +8,7 @@
       "@util": ["src/utils"],
       "@context": ["src/context"],
       "@types": ["src/types"],
+      "@fonts/*": ["src/font/*"]
     },
     "moduleResolution": "node",
     "jsx": "react-jsx",

@@ -40,7 +40,7 @@ const pokemonTypes = {
 };
 
 export const PokemonDetails = () => {
-    const { pokemonId } = useModalContext();
+    const { pokemonId, setShowModal } = useModalContext();
     const API_URL = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
     const { data, error, loading } = useFetch<Pokemon>(API_URL);
 
@@ -74,6 +74,7 @@ export const PokemonDetails = () => {
                 <span>
                     {toCapitalize(pokemonData.name)}
                 </span>
+                <button type="button" className="close-button" onClick={() => setShowModal(false)}>X</button>
             </div>
             <div className="details-content">
                 <div className="details-img">
@@ -113,6 +114,6 @@ export const PokemonDetails = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

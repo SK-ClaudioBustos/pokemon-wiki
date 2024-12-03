@@ -11,11 +11,11 @@
     align-items: center;
     background: rgb(0 0 0 / 40%);
     z-index: 2;
-}
 
-.modal {
-    min-height: 300px;
-    min-width: 450px;
-    background-color: var(--primary);
-    border-radius: 5px;
+    .modal {
+        min-height: 300px;
+        min-width: 450px;
+        background-color: var(--primary);
+        border-radius: 5px;
+    }
 }

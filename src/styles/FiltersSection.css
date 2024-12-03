@@ -1,17 +1,23 @@
 .filters-container {
     margin-top: 25px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
+    flex-direction: row;
+
+    .filter {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    }
 }
 
-.filter {
-    display: flex;
-    flex-direction: column;
-}
-
-.filter label {
-    text-align: center;
-    margin: 0;
-    padding: 0;
+@media (max-width: 750px) {
+    .filters-container {
+        flex-direction: column;
+    }
 }

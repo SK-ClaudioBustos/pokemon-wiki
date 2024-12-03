@@ -1,8 +1,8 @@
-import { useFilterContext } from "@/context/filter.context";
-import { useFetch } from "@/hooks/useFetch";
-import { GenerationData, GenerationsList } from "@/types/generations";
-import { toCapitalize } from "@/utils/functions/capitalize";
-import { Loading } from "@/utils/Loading";
+import { useFilterContext } from "@context";
+import { useFetch } from "@hooks/useFetch";
+import { GenerationData, GenerationsList } from "@types";
+import { toCapitalize } from "@util";
+import { Loading } from "@util";
 import "@styles/GenerationFilter.css";
 
 export const GenerationFilter = () => {
@@ -40,17 +40,19 @@ export const GenerationFilter = () => {
     return (
         <div className="filter">
             <label htmlFor="generation_filter">Select a Generation</label>
-            <select id="generation_filter" className="select-generation" onChange={handleChange}>
-                {
-                    generations.length > 0 && generations?.map((generation) => {
-                        if (parseInt(generation.id) === pokemonGeneration) {
-                            return <option key={generation.id} value={generation.id}> {generation.name}</option>
-                        } else {
-                            return <option key={generation.id} value={generation.id}> {generation.name}</option>
-                        }
-                    })
-                }
-            </select>
+            <div className="container-center">
+                <select id="generation_filter" className="select-generation" onChange={handleChange}>
+                    {
+                        generations.length > 0 && generations?.map((generation) => {
+                            if (parseInt(generation.id) === pokemonGeneration) {
+                                return <option key={generation.id} value={generation.id}> {generation.name}</option>
+                            } else {
+                                return <option key={generation.id} value={generation.id}> {generation.name}</option>
+                            }
+                        })
+                    }
+                </select>
+            </div>
         </div>
     );
 }

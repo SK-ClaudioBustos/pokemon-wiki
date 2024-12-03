@@ -11,7 +11,7 @@ export const GenerationFilter = () => {
     const { data, error, loading } = useFetch<GenerationsList>(API_URL);
 
     if (loading) {
-        return <div className="container-center" style={{ height: "300px" }}><Loading descripcion="Loading Filter" /></div>
+        return <Loading descripcion="Loading Filter" />
     }
 
     if (error) {

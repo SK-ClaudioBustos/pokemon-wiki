@@ -53,7 +53,7 @@ export const PokemonDetails = () => {
     }, [loading]);
 
     if (loading) {
-        return <div className="container-center" style={{ height: "100%" }}>
+        return <div className="container-center details-loading" style={{ height: "100%" }}>
             <Loading descripcion="Loading Pokemon Information" />
         </div>;
     }

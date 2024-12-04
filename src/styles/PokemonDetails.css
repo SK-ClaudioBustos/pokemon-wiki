@@ -92,6 +92,11 @@
     }
 }
 
+.details-loading {
+    min-width: 300px;
+    min-height: 300px;
+}
+
 .close-button {
     position: absolute;
     right: 0;

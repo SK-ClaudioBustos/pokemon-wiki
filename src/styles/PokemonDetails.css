@@ -128,4 +128,8 @@
     .details-content {
         flex-direction: column;
     }
+
+    .details-content .details-img .shiny-icon {
+        right: 50px;
+    }
 }

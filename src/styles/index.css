@@ -15,6 +15,7 @@
   --text: rgb(36, 37, 38);
 
   color: var(--text);
+  /* background-color: var(--primary); */
   background-image: radial-gradient(#c1c1c1 1.5px, var(--primary) 1px);
   background-size: 20px 20px;
 
@@ -50,4 +51,13 @@
     opacity: 100%;
     translate: 0 0;
   }
+}
+
+main {
+  min-height: 80vh;
+}
+
+
+a {
+  color: var(--text);
 }

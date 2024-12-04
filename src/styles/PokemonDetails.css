@@ -104,7 +104,7 @@
     border: none;
 }
 
-@media (width <= 752px) {
+@media (width <= 768px) {
     .details-content {
         flex-direction: column;
     }

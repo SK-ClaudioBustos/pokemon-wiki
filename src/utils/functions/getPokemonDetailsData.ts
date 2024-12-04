@@ -7,7 +7,7 @@ interface PokemonDetailsData {
     types: Type[];
 }
 
-export const getPokemonData = (pokemon: Pokemon): PokemonDetailsData => {
+export const getPokemonDetailsData = (pokemon: Pokemon): PokemonDetailsData => {
     const data: PokemonDetailsData = {
         name: pokemon.name,
         imgUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`,

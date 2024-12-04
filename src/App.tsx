@@ -5,11 +5,13 @@ import "@styles/App.css";
 function App() {
 
   return (
-    <FilterProvider>
-      <Header />
-      <Main />
+    <>
+      <FilterProvider>
+        <Header />
+        <Main />
+      </FilterProvider>
       <Footer />
-    </FilterProvider>
+    </>
   )
 }
 

@@ -2,13 +2,20 @@ import { ListItem, Modal, PokemonDetails } from "@component";
 import { useFilterContext } from "@context";
 import { useFetch } from "@hooks/useFetch";
 import "@styles/PokemonList.css";
-import { Generation, MainRegion, PokemonData } from "@types";
-import { Loading, toCapitalize } from "@util";
+import { Generation, PokemonData } from "@types";
+import { getPokemonList, Loading } from "@util";
+import { useMemo } from "react";
 
 export const PokemonList = () => {
     const { search, pokemonGeneration } = useFilterContext();
     const API_URL = `https://pokeapi.co/api/v2/generation/${pokemonGeneration}/`;
     const { data, error, loading } = useFetch<Generation>(API_URL);
+
+    const pokemonsArray: PokemonData[] = useMemo(() => {
+        if (data) {
+            return getPokemonList(data);
+        } else return [];
+    }, [data]);
 
     if (loading) {
         return <div className="container-center" style={{ height: "300px" }}><Loading descripcion="Loading" /></div>
@@ -22,14 +29,7 @@ export const PokemonList = () => {
         return <> No hay pokemones para mostrar</>
     }
 
-    const pokemonsArray: PokemonData[] = data?.pokemon_species.map((item: MainRegion) => {
-        const id = item.url.split("/").slice(-2, -1)[0];
-        const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-        const name = toCapitalize(item.name);
-        return { id, name, imageUrl: image };
-    });
-
-    const pokemons = pokemonsArray.filter( (pokemon) => pokemon.name.toLowerCase().startsWith(search as string));
+    const pokemons = pokemonsArray.filter((pokemon) => pokemon.name.toLowerCase().startsWith(search as string));
 
     return (
         <>

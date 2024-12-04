@@ -1,2 +1,4 @@
 export * from "./capitalize";
-export * from "./getPokemonData";
+export * from "./getPokemonDetailsData";
+export * from "./getGenerationData";
+export * from "./getPokemonList";

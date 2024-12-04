@@ -2,7 +2,7 @@ import { useModalContext } from "@context";
 import { useFetch } from "@hooks/useFetch";
 import "@styles/PokemonDetails.css";
 import { Pokemon, Stat } from "@types";
-import { getPokemonData, Loading, toCapitalize } from "@util";
+import { getPokemonDetailsData, Loading, toCapitalize } from "@util";
 import { useEffect } from "react";
 
 enum PokemonStatColors {
@@ -66,7 +66,7 @@ export const PokemonDetails = () => {
         return <>Nothing to Show</>;
     }
 
-    const pokemonData = getPokemonData(data);
+    const pokemonData = getPokemonDetailsData(data);
 
     return (
         <div>

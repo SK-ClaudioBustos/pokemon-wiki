@@ -10,6 +10,18 @@
         font-size: 1.5rem;
         font-weight: bold;
     }
+
+    .close-button {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: var(--tertiary);
+        color: #fff;
+        font-size: 2rem;
+        outline: none;
+        border: none;
+    }
 }
 
 .details-content {
@@ -21,6 +33,7 @@
     .details-img {
         display: flex;
         justify-content: center;
+        position: relative;
 
         img {
             background-color: #fff;
@@ -30,6 +43,20 @@
             object-fit: cover;
             image-rendering: pixelated;
             image-rendering: crisp-edges;
+        }
+
+        .shiny-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border: none;
+            right: 10px;
+            top: 10px;
         }
     }
 
@@ -95,18 +122,6 @@
 .details-loading {
     min-width: 300px;
     min-height: 300px;
-}
-
-.close-button {
-    position: absolute;
-    right: 0;
-    margin-right: 10px;
-    cursor: pointer;
-    background-color: var(--tertiary);
-    color: #fff;
-    font-size: 2rem;
-    outline: none;
-    border: none;
 }
 
 @media (max-width: 768px) {

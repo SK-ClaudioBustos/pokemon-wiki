@@ -3,7 +3,7 @@ import { useFetch } from "@hooks/useFetch";
 import "@styles/PokemonDetails.css";
 import { Pokemon, Stat } from "@types";
 import { getPokemonDetailsData, Loading, toCapitalize } from "@util";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 enum PokemonStatColors {
     HP = "#FF0000",
@@ -43,6 +43,7 @@ export const PokemonDetails = () => {
     const { pokemonId, setShowModal } = useModalContext();
     const API_URL = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
     const { data, error, loading } = useFetch<Pokemon>(API_URL);
+    const [isShiny, setIsShniy] = useState(false);
 
     useEffect(() => {
         if (!loading) {
@@ -78,7 +79,12 @@ export const PokemonDetails = () => {
             </div>
             <div className="details-content">
                 <div className="details-img">
-                    <img src={pokemonData.imgUrl} alt={`image of ${pokemonData.name}`} />
+                    <button style={isShiny ? { backgroundColor: "#4caf50" } : { backgroundColor: "#f5e90d" }} onClick={() => setIsShniy(!isShiny)} className="shiny-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff">
+                            <path style={{ stroke: "#fff", strokeWidth: "1" }} d="M11.081 5.141c.347-.807 1.491-.807 1.838 0l1.274 2.97a1 1 0 00.828.601l3.218.295c.875.08 1.229 1.168.568 1.748l-2.43 2.13a1 1 0 00-.316.972l.714 3.152c.194.857-.732 1.53-1.487 1.08l-2.776-1.653a1 1 0 00-1.024 0l-2.776 1.653c-.755.45-1.681-.223-1.487-1.08l.715-3.152a1 1 0 00-.317-.973l-2.43-2.13c-.66-.579-.307-1.667.568-1.747l3.218-.295a1 1 0 00.828-.601l1.274-2.97z" />
+                        </svg>
+                    </button>
+                    <img src={isShiny ? pokemonData.img.shiny : pokemonData.img.normal} alt={`image of ${pokemonData.name}`} />
                 </div>
                 <div>
                     <div className="details-stats">

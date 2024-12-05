@@ -1,19 +1,23 @@
 import { createContext, useContext } from "react";
 
+type PokemonMetadata = {
+    id: string;
+    name: string;
+};
+
 interface ModalContextType {
     showModal: boolean | null;
-    pokemonId: string | null;
-    setPokemonId: React.Dispatch<React.SetStateAction<string>>;
+    pokemonMetadata: PokemonMetadata | null;
+    setPokemonMetadata: React.Dispatch<React.SetStateAction<PokemonMetadata>>;
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const ModalContext = createContext<ModalContextType>({
     showModal: null,
-    pokemonId: null,
-    setPokemonId: () => { },
-    setShowModal: () => { }
+    pokemonMetadata: null,
+    setPokemonMetadata: () => {},
+    setShowModal: () => {}
 });
-
 
 export const useModalContext = () => {
     const context = useContext(ModalContext);

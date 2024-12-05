@@ -1,4 +1,4 @@
-import { ListItem, Modal, PokemonDetails } from "@component";
+import { ListItem } from "@component";
 import { useFilterContext } from "@context";
 import { useFetch } from "@hooks/useFetch";
 import "@styles/PokemonList.css";
@@ -40,9 +40,6 @@ export const PokemonList = () => {
                     ))
                 }
             </div>
-            <Modal>
-                <PokemonDetails />
-            </Modal>
         </>
     );
 }

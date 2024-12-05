@@ -1,6 +1,6 @@
 import { Pokemon, Stat, Type } from "@types";
 
-interface PokemonDetailsData {
+interface GeneralData {
     name: string;
     img: {
         normal: string,
@@ -10,8 +10,8 @@ interface PokemonDetailsData {
     types: Type[];
 }
 
-export const getPokemonDetailsData = (pokemon: Pokemon): PokemonDetailsData => {
-    const data: PokemonDetailsData = {
+export const getGeneralInformation = (pokemon: Pokemon): GeneralData => {
+    const data: GeneralData = {
         name: pokemon.name,
         img: {
             normal: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`,

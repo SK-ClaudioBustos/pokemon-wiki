@@ -1,0 +1,47 @@
+.descriptions-container {
+    width: 560px;
+
+    .description-type {
+        padding: 10px 0;
+        text-align: center;
+
+        span {
+            background-color: var(--i);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 5px;
+        }
+    }
+
+    .description-list {
+        padding: 0 15px;
+        list-style: none;
+        margin: 0 auto 15px;
+
+        li {
+            margin-bottom: 7px;
+
+            &::before {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                content: url("/public/pokeball.ico");
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .descriptions-container {
+        width: 330px;
+        
+        .description-list li {
+            margin-bottom: 15px;
+        }
+    }
+    
+}

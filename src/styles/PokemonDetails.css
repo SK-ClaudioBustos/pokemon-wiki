@@ -1,135 +1,65 @@
-.details-header {
-    background-color: var(--tertiary);
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px 5px 0 0;
-    position: relative;
+.pokemon-details-container {
+    min-width: 560px;
+    min-height: 362px;
 
-    span {
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    .close-button {
-        position: absolute;
-        right: 0;
-        margin-right: 10px;
-        cursor: pointer;
+    .details-header {
         background-color: var(--tertiary);
-        color: #fff;
-        font-size: 2rem;
-        outline: none;
-        border: none;
-    }
-}
-
-.details-content {
-    padding: 30px 15px;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-
-    .details-img {
-        display: flex;
-        justify-content: center;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px 5px 0 0;
         position: relative;
 
-        img {
-            background-color: #fff;
-            border-radius: 10px;
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
+        span {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        .shiny-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        .close-button {
             position: absolute;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            right: 0;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: var(--tertiary);
+            color: #fff;
+            font-size: 2rem;
+            outline: none;
             border: none;
-            right: 10px;
-            top: 10px;
         }
     }
 
-    div {
-        .details-stats {
+    .tabs {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
 
-            ul {
-                padding: 0;
-                margin: 0;
-                width: 300px;
+        button {
+            flex-grow: 1;
+            outline: none;
+            border: none;
+            background-color: rgb(247, 219, 82);
+            border-bottom: 1px solid #ffffff;
+            font-size: 1.1rem;
+            font-weight: 300;
 
-                li {
-                    margin: 0;
-                    padding: 0;
-                    list-style: none;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-
-                    p {
-                        font-size: 15px;
-                        padding: 0;
-                        margin: 0;
-                        color: var(--i)
-                    }
-
-                    /* Fondo general */
-                    meter::-webkit-meter-bar {
-                        background: #ffffff;
-                    }
-
-                    /* Relleno en el rango óptimo */
-                    meter::-webkit-meter-optimum-value {
-                        background: var(--i);
-                    }
-
-                    /* Firefox */
-                    /* Color del relleno */
-                    meter::-moz-meter-bar {
-                        background: linear-gradient(90deg, #4caf50, #8bc34a);
-                    }
-                }
-            }
-        }
-
-        .details-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 20px;
-
-            .pokemon-type {
-                padding: .5px 10px;
-                background-color: var(--j);
-                border: 2px solid var(--k);
-                border-radius: 20px;
-                color: var(--k);
+            &:hover {
+                background-color: rgba(238, 200, 10, 1);
             }
         }
     }
+
 }
 
-.details-loading {
-    min-width: 300px;
-    min-height: 300px;
+.tabs>button:first-child {
+    border-right: 1px solid #fff;
+}
+
+.tabs>button:last-child {
+    border-left: 1px solid #fff;
 }
 
 @media (max-width: 768px) {
-    .details-content {
-        flex-direction: column;
-    }
-
-    .details-content .details-img .shiny-icon {
-        right: 50px;
+    .pokemon-details-container {
+        min-width: 300px;
     }
 }

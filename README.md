@@ -6,7 +6,7 @@ A web application to explore all Pokémon by generation. You can search for spec
 
 - Browse all Pokémon by generation.
 - Search for specific Pokémon within a generation.
-- View detailed information about each Pokémon.
+- View detailed information about each Pokémon, including stats, types, descriptions, and evolution tree.
 
 ## Technologies Used
 

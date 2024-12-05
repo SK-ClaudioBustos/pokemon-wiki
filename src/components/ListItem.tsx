@@ -9,15 +9,19 @@ interface Props {
 
 export const ListItem = ({ pokemon }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
-    const { setShowModal, setPokemonId } = useModalContext();
+    const { setShowModal, setPokemonMetadata } = useModalContext();
 
     const handleImageLoad = () => {
         setIsLoading(false);
     };
 
     const handleClick = () => {
+        const metadata = {
+            id: pokemon.id,
+            name: pokemon.name
+        }
         setShowModal(true);
-        setPokemonId(pokemon.id);
+        setPokemonMetadata(metadata);
     }
 
     return (

@@ -1,4 +1,4 @@
-import { PokemonList } from "@component";
+import { Modal, PokemonDetails, PokemonList } from "@component";
 import { ModalProvider } from "@context";
 
 export const Main = () => {
@@ -6,6 +6,9 @@ export const Main = () => {
         <main>
             <ModalProvider>
                 <PokemonList />
+                <Modal>
+                    <PokemonDetails />
+                </Modal>
             </ModalProvider>
         </main>
     );

@@ -1,21 +1,24 @@
 import { ReactNode, useState } from "react";
 import { ModalContext } from "./modal.context";
 
-const EmptyPokemonState = "";
+const EmptyPokemonState = {
+    id: "",
+    name: ""
+};
 
 interface ModalProps {
     children: ReactNode
 }
 
 export const ModalProvider = ({ children }: ModalProps) => {
-    const [pokemonId, setPokemonId] = useState(EmptyPokemonState);
+    const [pokemonMetadata, setPokemonMetadata] = useState(EmptyPokemonState);
     const [showModal, setShowModal] = useState(false);
 
     return (
         <ModalContext.Provider value={{
-            pokemonId,
+            pokemonMetadata,
             showModal,
-            setPokemonId,
+            setPokemonMetadata,
             setShowModal
         }}>{children}</ModalContext.Provider>
     );

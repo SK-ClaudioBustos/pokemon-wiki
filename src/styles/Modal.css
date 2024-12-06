@@ -18,8 +18,11 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .modal {
-        border-radius: 0px;
+        --size: 100%;
+        height: var(--size);
+        width: var(--size);
+        border-radius: 0;
     }
 }

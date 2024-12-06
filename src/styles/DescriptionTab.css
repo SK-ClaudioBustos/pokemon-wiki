@@ -38,7 +38,7 @@
 
 @media (max-width: 768px) {
     .descriptions-container {
-        width: 330px;
+        width: 100%;
         
         .description-list li {
             margin-bottom: 15px;

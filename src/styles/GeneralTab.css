@@ -9,6 +9,7 @@
         display: flex;
         justify-content: center;
         position: relative;
+        width: 220px;
 
         img {
             background: linear-gradient(var(--tertiary), #d88585);
@@ -37,7 +38,7 @@
         }
     }
 
-    div {
+    .details-pokemon {
         .details-stats {
 
             ul {
@@ -104,9 +105,20 @@
 @media (max-width: 768px) {
     .details-content {
         flex-direction: column;
-    }
+        
+        .details-img {
+            margin: 0 auto;
+        }
 
-    .details-content .details-img .shiny-icon {
-        right: 100px;
-    }
+        .details-pokemon {
+            margin: 0 5vw;
+        
+            .details-stats {
+
+                ul {
+                    width: 100%
+                }
+            }
+        }
+    } 
 }

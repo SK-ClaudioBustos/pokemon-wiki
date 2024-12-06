@@ -4,6 +4,7 @@
     flex-direction: column;
     text-align: center;
     transition: .3s ease-in all;
+    background-color: #c54848;
     background-color: color-mix(in srgb, var(--tertiary), white 25%);
     animation: faded-slide linear both;
     animation-timeline: view();

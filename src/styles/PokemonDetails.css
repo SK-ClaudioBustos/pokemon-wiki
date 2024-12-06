@@ -44,6 +44,7 @@
             font-weight: 300;
 
             &:hover {
+                background-color: #404040;
                 background-color: color-mix(in srgb, var(--color-button), white 25%);
             }
         }

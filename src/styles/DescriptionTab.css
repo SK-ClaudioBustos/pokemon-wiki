@@ -6,7 +6,8 @@
         text-align: center;
 
         span {
-            background: linear-gradient(var(--i), color-mix(in srgb, var(--i), black 45%)); 
+            background: linear-gradient(var(--i), #6a6a6a);
+            background: linear-gradient(var(--i), color-mix(in srgb, var(--i), black 45%));
             color: #fff;
             font-weight: bold;
             border-radius: 10px;

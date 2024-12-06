@@ -33,7 +33,7 @@ export const GeneralTab = () => {
 
     if (loading) {
         return <div className="container-center details-loading" style={{ height: "100%" }}>
-            <Loading descripcion="Loading Pokemón Data" />
+            <Loading descripcion="Loading Pokemón Data" color="#3e3d3d" />
         </div>;
     }
 

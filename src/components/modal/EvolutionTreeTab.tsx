@@ -7,7 +7,7 @@ export const EvolutionTreeTab = () => {
 
     if (loading) {
         return <div className="container-center" style={{ height: "100%" }}>
-            <Loading descripcion="Loading Evolution Tree" />
+            <Loading descripcion="Loading Evolution Tree" color="#3e3d3d" />
         </div>;
     }
 

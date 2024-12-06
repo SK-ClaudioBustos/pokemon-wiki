@@ -6,7 +6,6 @@
 }
 
 .loading-description {
-    color: #fff;
     animation: disapear 0.8s linear 0s infinite reverse;
 }
 
@@ -25,7 +24,6 @@
 }
 
 .loading-point {
-    background: #fff;
     height: 10px;
     width: 10px;
     border-radius: 50%;

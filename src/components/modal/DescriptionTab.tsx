@@ -8,7 +8,7 @@ export const DescriptionTab = () => {
 
     if (loading) {
         return <div className="container-center details-loading" style={{ height: "100%" }}>
-            <Loading descripcion="Loading Pokemón Description" />
+            <Loading descripcion="Loading Pokemón Description" color="#3e3d3d" />
         </div>;
     }
 

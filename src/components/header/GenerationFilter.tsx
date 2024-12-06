@@ -1,28 +1,24 @@
 import { useFilterContext } from "@context";
-import { useFetch } from "@hooks/useFetch";
 import "@styles/GenerationFilter.css";
-import { GenerationData, GenerationsList } from "@types";
-import { Error, getGenerationData, Loading } from "@util";
-import { useMemo } from "react";
+import { Error, Loading } from "@util";
 
 export const GenerationFilter = () => {
-    const { pokemonGeneration, setPokemonGeneration } = useFilterContext();
-    const API_URL = `https://pokeapi.co/api/v2/generation/`;
-    console.log("filter fetching");
-    const { data, error, loading } = useFetch<GenerationsList>(API_URL);
+    const { pokemonGeneration, generations, loadingGenerations, errorGenerations, setPokemonGeneration } = useFilterContext();
 
-    const generations: GenerationData[] = useMemo(() => {
-        if (data) {
-            return getGenerationData(data);
-        } else return [];
-    }, [data]);
-
-    if (loading) {
+    if (loadingGenerations) {
         return <Loading descripcion="Loading Filter" />;
     }
 
-    if (error) {
-        return <Error error={error} />;
+    if (errorGenerations) {
+        return <Error error={errorGenerations} />;
+    }
+
+    if (!generations) {
+        return (
+            <div className="container-center">
+                <h1> No Available Generations</h1>
+            </div>
+        );
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

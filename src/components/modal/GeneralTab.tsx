@@ -1,7 +1,7 @@
 import { useDataContext } from "@context";
 import "@styles/GeneralTab.css";
 import { Stat } from "@types";
-import { getGeneralInformation, Loading } from "@util";
+import { Error, getGeneralInformation, Loading } from "@util";
 import { useState } from "react";
 
 const pokemonTypes = {
@@ -38,11 +38,15 @@ export const GeneralTab = () => {
     }
 
     if (error) {
-        return <><h1>Unknow Error</h1></>
+        return <Error error={error} />;
     }
 
     if (!data) {
-        return <>Nothing to Show</>;
+        return (
+            <div className="container-center" style={{ height: "100%" }}>
+                <h1>Nothing to Show</h1>
+            </div>
+        )
     }
 
     const pokemonData = getGeneralInformation(data);

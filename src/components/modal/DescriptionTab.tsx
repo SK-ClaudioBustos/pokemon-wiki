@@ -1,6 +1,6 @@
 import { useDataContext } from "@context";
 import "@styles/DescriptionTab.css";
-import { getDescription, Loading } from "@util";
+import { Error, getDescription, Loading } from "@util";
 import React from "react";
 
 export const DescriptionTab = () => {
@@ -13,11 +13,15 @@ export const DescriptionTab = () => {
     }
 
     if (error) {
-        return <><h1>Unknow Error</h1></>
+        return <Error error={error} />;
     }
 
     if (!data) {
-        return <>Nothing to Show</>;
+        return (
+            <div className="container-center" style={{ height: "100%" }}>
+                <h1>Nothing to Show</h1>
+            </div>
+        );
     }
 
     const descriptions = getDescription(data);

@@ -1,5 +1,5 @@
 import { useDataContext } from "@context";
-import { getEvolutions, Loading } from "@util";
+import { Error, getEvolutions, Loading } from "@util";
 import { EvolutionTree } from "./EvolutionTree";
 
 export const EvolutionTreeTab = () => {
@@ -12,13 +12,15 @@ export const EvolutionTreeTab = () => {
     }
 
     if (error) {
-        return <><h1>Unknow Error</h1></>
+        return <Error error={error} />;
     }
 
     if (!data) {
-        return <div className="container-center" style={{ height: "100%" }}>
-            Nothing to Show
-        </div>;
+        return (
+            <div className="container-center" style={{ height: "100%" }}>
+                <h1>Nothing to Show</h1>
+            </div>
+        );
     }
 
     const evolutions = getEvolutions(data);

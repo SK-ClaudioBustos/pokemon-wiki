@@ -1,8 +1,12 @@
+import { PokemonData } from "@types";
 import { createContext, useContext } from "react";
 
 interface FilterContextType {
     pokemonGeneration: number | null
     search: string | null
+    pokemonList: PokemonData[] | null,
+    loadingPokemonList: boolean,
+    errorPokemonList: Error | null,
     setPokemonGeneration: React.Dispatch<React.SetStateAction<number>>
     setSearch: React.Dispatch<React.SetStateAction<string>>
 }
@@ -10,8 +14,11 @@ interface FilterContextType {
 export const FilterContext = createContext<FilterContextType>({
     pokemonGeneration: null,
     search: null,
+    pokemonList: null,
+    loadingPokemonList: false,
+    errorPokemonList: null,
     setPokemonGeneration: () => { },
-    setSearch: () => {}
+    setSearch: () => { }
 })
 
 export const useFilterContext = () => {

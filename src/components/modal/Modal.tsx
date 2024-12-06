@@ -15,10 +15,10 @@ export const Modal = ({ children }: Props) => {
 
     const closeModal = () => { setShowModal(false) }
 
-    // Get the parent element for the modal
+    // Obtener el elemento padre del modal
     const modalRoot = document.getElementById("modal")
 
-    // This is to prevent to close the modal when the user make a click on the overlay
+    // Sirve para prevenir cerrar el modal cuando se hace click sobre él
     const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation()
     }
@@ -31,10 +31,13 @@ export const Modal = ({ children }: Props) => {
             }
         }
         if (showModal) {
+            // Esta linea sirve para desbilitar el scroll al abrir el modal
+            document.body.style.overflow = "hidden";
             document.addEventListener(eventListener, handleEsc)
         }
 
         return () => {
+            document.body.style.overflow = "";
             document.removeEventListener(eventListener, handleEsc)
         }
     }, [setShowModal, showModal])

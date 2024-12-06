@@ -15,6 +15,10 @@
             font-weight: bold;
         }
 
+        span::before {
+            content: url("/public/pokeball.ico");
+        }
+
         .close-button {
             position: absolute;
             right: 0;

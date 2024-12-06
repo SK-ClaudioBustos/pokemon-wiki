@@ -1,8 +1,9 @@
 .details-content {
-    padding: 30px 15px;
+    padding: 30px 15px 10px;
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    background-color: #fff;
 
     .details-img {
         display: flex;
@@ -10,7 +11,7 @@
         position: relative;
 
         img {
-            background-color: #fff;
+            background: linear-gradient(var(--tertiary), color-mix(in srgb, var(--tertiary), white 50%));
             border-radius: 10px;
             width: 220px;
             height: 220px;
@@ -31,6 +32,7 @@
             border: none;
             right: 10px;
             top: 10px;
+            background: var(--shiny-color);
         }
     }
 
@@ -49,28 +51,28 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    --color-meter: #4caf50;
 
                     p {
                         font-size: 15px;
                         padding: 0;
                         margin: 0;
-                        color: var(--i)
                     }
 
                     /* Fondo general */
                     meter::-webkit-meter-bar {
-                        background: #ffffff;
+                        background: color-mix(in srgb, var(--color-meter), black 23%);
                     }
 
                     /* Relleno en el rango óptimo */
                     meter::-webkit-meter-optimum-value {
-                        background: var(--i);
+                        background: linear-gradient(var(--color-meter), #8ed937);
                     }
 
                     /* Firefox */
                     /* Color del relleno */
                     meter::-moz-meter-bar {
-                        background: linear-gradient(90deg, #4caf50, #8bc34a);
+                        background: linear-gradient(var(--color-meter), #8ed937);
                     }
                 }
             }
@@ -85,7 +87,6 @@
             .pokemon-type {
                 padding: .5px 10px;
                 background-color: var(--j);
-                border: 2px solid var(--k);
                 border-radius: 20px;
                 color: var(--k);
             }

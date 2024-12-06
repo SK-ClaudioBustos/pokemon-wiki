@@ -34,16 +34,17 @@
         flex-direction: row;
 
         button {
+            --color-button: #000;
             flex-grow: 1;
             outline: none;
             border: none;
-            background-color: rgb(247, 219, 82);
+            background-color: var(--color-button);
             border-bottom: 1px solid #ffffff;
             font-size: 1.1rem;
             font-weight: 300;
 
             &:hover {
-                background-color: rgba(238, 200, 10, 1);
+                background-color: color-mix(in srgb, var(--color-button), white 25%);
             }
         }
     }

@@ -1,11 +1,19 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('/src/font/Pokemon-Solid.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
 .title {
     margin: 40px 0 0;
     animation: faded 1s normal;
 
     h1 {
+        font-family: 'Pokemon',Jont;
         margin: 0;
         text-align: center;
-        color: var(--tertiary);
-        text-decoration: underline;
+        color: #feca1b;
+        font-size: 3rem;
     }
 }

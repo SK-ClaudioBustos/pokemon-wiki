@@ -25,7 +25,7 @@
                 display: flex;
                 flex-direction: column;
                 border-radius: 5px;
-                border: 1px solid var(--c);
+                border: 3px outset color-mix(in srgb, var(--tertiary), white 45%);
                 text-align: center;
                 position: relative;
 

@@ -25,7 +25,7 @@ export const DescriptionTab = () => {
     return (
         <div className="descriptions-container">
             <div className="description-type">
-                <span style={{ "--i": descriptions.is_legendary ? "#EA12A2" : "#6C6964" } as React.CSSProperties}>
+                <span style={{ "--i": descriptions.is_legendary ? "#EA12A2" : "#c1c1c1" } as React.CSSProperties}>
                     {
                         descriptions.is_legendary ? "Legendary Pokémon" : "Common Pokémon"
                     }

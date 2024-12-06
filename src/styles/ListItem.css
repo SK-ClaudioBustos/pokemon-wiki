@@ -4,6 +4,7 @@
     flex-direction: column;
     text-align: center;
     transition: .3s ease-in all;
+    background-color: color-mix(in srgb, var(--tertiary), white 25%);
     animation: faded-slide linear both;
     animation-timeline: view();
     animation-range: entry 10% cover 20%;
@@ -38,6 +39,7 @@
     }
 
     p {
+        color: #fff;
         margin-top: 0;
     }
 

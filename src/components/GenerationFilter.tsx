@@ -13,7 +13,7 @@ export const GenerationFilter = () => {
     const generations: GenerationData[] = useMemo(() => {
         if (data) {
             return getGenerationData(data);
-        } else return []
+        } else return [];
     }, [data]);
 
     if (loading) {

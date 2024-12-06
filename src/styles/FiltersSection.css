@@ -9,6 +9,7 @@
         flex-direction: column;
 
         label {
+            color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;

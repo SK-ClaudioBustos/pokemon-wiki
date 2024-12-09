@@ -3,7 +3,7 @@ import "@styles/GenerationFilter.css";
 import { Error, Loading } from "@util";
 
 export const GenerationFilter = () => {
-    const { pokemonGeneration, generations, loadingGenerations, errorGenerations, setPokemonGeneration } = useFilterContext();
+    const { pokemonGeneration, generations, loadingGenerations, errorGenerations, setPokemonGeneration, setSearch } = useFilterContext();
 
     if (loadingGenerations) {
         return <Loading descripcion="Loading Filter" />;
@@ -23,6 +23,7 @@ export const GenerationFilter = () => {
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setPokemonGeneration(parseInt(event.target.value));
+        setSearch("");
     }
 
     return (

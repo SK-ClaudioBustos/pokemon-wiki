@@ -40,7 +40,6 @@ export const FilterProvider = ({ children }: FilterProps) => {
     }, [pokemonGeneration]);
 
     useEffect(() => {
-        console.log("fetching generations");
         setLoadingGenerations(true);
         const API_URL = `https://pokeapi.co/api/v2/generation/`;
         fetch(API_URL)

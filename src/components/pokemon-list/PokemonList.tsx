@@ -25,11 +25,23 @@ export const PokemonList = () => {
     const pokemons = pokemonList.filter((pokemon) => pokemon.name.toLowerCase().startsWith(search as string));
 
     return (
-        <div className="grid">
+        <div>
             {
-                pokemons.map((item) => (
-                    <ListItem key={item.id} pokemon={item} />
-                ))
+                pokemons.length > 0
+                    ? (
+                        <div className="grid">
+                            {
+                                pokemons.map((item) => (
+                                    <ListItem key={item.id} pokemon={item} />
+                                ))
+                            }
+                        </div>
+                    )
+                    : (
+                        <div className="container-center" style={{ textAlign: "center", marginTop: "3rem" }}>
+                            <p style={{ color: "#fff", textWrap: "nowrap" }}>No Pokémons Founded</p>
+                        </div>
+                    )
             }
         </div>
     );

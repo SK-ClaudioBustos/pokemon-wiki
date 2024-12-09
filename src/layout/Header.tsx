@@ -4,7 +4,7 @@ export const Header = () => {
     return (
         <header>
             <div className="container-center">
-                <p style={{ color: "#fff" }}>
+                <p style={{ color: "#fff", margin: "0" }}>
                     {`Powered by `}
                     <a
                         href="https://pokeapi.co/?ref=public-apis"

@@ -1,23 +1,14 @@
 import { useFilterContext } from "@context";
 import "@styles/SearchBar.css";
-import { useDebouncedCallback } from "use-debounce";
 
 export const SearchBar = () => {
-
-    const { setSearch } = useFilterContext();
-
-    const debouncedhandleSearch = useDebouncedCallback(
-        (event: React.ChangeEvent<HTMLInputElement>) => {
-            setSearch(event.target.value);
-        },
-        300
-    );
+    const { search, setSearch } = useFilterContext();
 
     return (
         <div className="filter">
             <label htmlFor="search-bar">Search a Pokemón</label>
             <div className="container-center">
-                <input autoComplete="off" onChange={debouncedhandleSearch} id="search-bar" className="search-bar" placeholder="Pikachu, Charmander..." type="text" />
+                <input autoComplete="off" value={search?.toString()} onChange={(e) => setSearch(e.target.value)} id="search-bar" className="search-bar" placeholder="Pikachu, Charmander..." type="text" />
             </div>
         </div>
     );

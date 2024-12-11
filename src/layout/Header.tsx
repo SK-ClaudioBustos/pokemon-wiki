@@ -1,19 +1,16 @@
 import { FiltersSection, Title } from "@component";
+import { TextWithLink } from "@util";
 
 export const Header = () => {
     return (
         <header>
             <div className="container-center">
-                <p style={{ color: "#fff", margin: "0" }}>
-                    {`Powered by `}
-                    <a
-                        href="https://pokeapi.co/?ref=public-apis"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="go to PokéApi Website">
-                        PokéApi
-                    </a>
-                </p>
+                <TextWithLink
+                    ariaLabel="Go to PokéApi Website"
+                    link="https://pokeapi.co/?ref=public-apis"
+                    text="Powered by "
+                    textLink="PokéApi"
+                />
             </div>
             <Title />
             <FiltersSection />

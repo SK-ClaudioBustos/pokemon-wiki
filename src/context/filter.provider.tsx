@@ -19,7 +19,7 @@ export const FilterProvider = ({ children }: FilterProps) => {
     isLoading: loadingPokemonList,
     error: errorPokemonList,
   } = useQuery({
-    queryKey: ["pokemon", pokemonGeneration],
+    queryKey: ["pokemon-generation", pokemonGeneration],
     queryFn: () => getPokemonList(pokemonGeneration),
   });
 

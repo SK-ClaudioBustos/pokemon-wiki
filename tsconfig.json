@@ -8,7 +8,8 @@
       "@util": ["src/utils"],
       "@context": ["src/context"],
       "@types": ["src/types"],
-      "@layout": ["src/layout"]
+      "@layout": ["src/layout"],
+      "@service/*": ["src/service/*"]
     },
     "moduleResolution": "node",
     "jsx": "react-jsx",

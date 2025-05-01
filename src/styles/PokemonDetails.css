@@ -16,7 +16,7 @@
         }
 
         span::before {
-            content: url("/public/pokeball.ico");
+            content: url("/pokeball.ico");
         }
 
         .close-button {

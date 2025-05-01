@@ -28,7 +28,7 @@ export const DataProvider = ({ pokemonId, children }: DataProviderProps) => {
 
   const { data: evolutionData, isLoading: loadingEvolutionData, error: errorEvolutionData} = useQuery({
     queryKey: ['pokemon', pokemonId, 'evolution-chain'],
-    queryFn: () => getEvolutionTree(descriptionData!.evolution_chain.url),
+    queryFn: () => getEvolutionTree(descriptionData!.evolution_chain_url),
     enabled: !!descriptionData
   });
 

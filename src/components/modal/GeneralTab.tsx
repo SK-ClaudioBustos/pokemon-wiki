@@ -28,7 +28,7 @@ const pokemonTypes = {
 };
 
 export const GeneralTab = () => {
-    const { generalData: data, loadingGeneralData: loading, errorGeneralData: error } = useDataContext();
+    const { pokemonData: data, loadingPokemonData: loading, errorPokemonData: error } = useDataContext();
     const [showShiny, setShowShniy] = useState(false);
 
     if (loading) {

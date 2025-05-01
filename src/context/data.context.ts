@@ -2,25 +2,25 @@ import { EvolutionChain, Pokemon, PokemonSpecie } from "@types";
 import { createContext, useContext } from "react";
 
 interface DataContextType {
-    generalData: Pokemon | null,
-    descriptionData: PokemonSpecie | null,
-    evolutionData: EvolutionChain | null
-    loadingGeneralData: boolean,
+    pokemonData: Pokemon | undefined,
+    descriptionData: PokemonSpecie | undefined,
+    evolutionData: EvolutionChain | undefined
+    loadingPokemonData: boolean,
     loadingDescriptionData: boolean,
     loadingEvolutionData: boolean,
-    errorGeneralData: Error | null,
+    errorPokemonData: Error | null,
     errorDescriptionData: Error | null,
     errorEvolutionData: Error | null,
 }
 
 export const DataContext = createContext<DataContextType>({
-    generalData: null,
-    descriptionData: null,
-    evolutionData: null,
-    loadingGeneralData: false,
+    pokemonData: undefined,
+    descriptionData: undefined,
+    evolutionData: undefined,
+    loadingPokemonData: false,
     loadingDescriptionData: false,
     loadingEvolutionData: false,
-    errorGeneralData: null,
+    errorPokemonData: null,
     errorDescriptionData: null,
     errorEvolutionData: null,
 });

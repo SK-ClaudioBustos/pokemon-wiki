@@ -19,6 +19,6 @@ export const getPokemonList = async (
     return pokemonList;
 
   } catch (error) {
-    throw new Error("Failed on fetch pokemon list");
+    throw new Error("Failed to retrieve the Pokémon list from the API");
   }
 };

@@ -7,14 +7,7 @@ export default defineConfig({
   plugins: [react(),tsconfigPaths()],
   resolve: {
     alias: {
-      "@component": "src/components",
-      "@styles/*": "src/styles/*",
-      "@hooks/*": "src/hooks/*",
-      "@util": "src/utils",
-      "@context": "src/context",
-      "@types": "src/types",
-      "@layout": "src/layout",
-      "@service/*": "src/service/*"
+      
     },
     extensions: ['.ts', '.tsx', '.js', '.json']
   }

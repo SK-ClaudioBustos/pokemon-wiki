@@ -8,7 +8,7 @@ export const getPokemon = async (
     const response = await fetch(API_URL);
 
     if (!response.ok) {
-      throw new Error("An error has ocurred");
+      throw new Error("Failed on retrieve Pokemon data");
     }
 
     const pokemon: Pokemon = await response.json();
@@ -23,6 +23,6 @@ export const getPokemon = async (
     };
     return data;
   } catch (error) {
-    throw new Error("Failed on retrieve Pokemon data");
+    throw new Error((error as Error).message);
   }
 };

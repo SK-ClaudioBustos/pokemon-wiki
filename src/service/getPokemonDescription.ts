@@ -1,4 +1,4 @@
-import { Color, GeneralDescription, PokemonSpecie } from "@types";
+import { GeneralDescription, PokemonSpecie } from "@types";
 
 export const getPokemonDescription = async (
   pokemonId: string
@@ -6,6 +6,11 @@ export const getPokemonDescription = async (
   try {
     const API_DESCRIPTION = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`;
     const response = await fetch(API_DESCRIPTION);
+
+    if (!response.ok) {
+      throw new Error("Failed on retrieve pokemon description");
+    }
+    
     const result: PokemonSpecie = await response.json();
     const entriesFiltered = result.flavor_text_entries.filter(
       (entry) => entry.language.name === "en"
@@ -29,6 +34,6 @@ export const getPokemonDescription = async (
 
     return descriptionData;
   } catch (error) {
-    throw new Error("Failed on retrieve Pokemon description");
+    throw new Error((error as Error).message);
   }
 };

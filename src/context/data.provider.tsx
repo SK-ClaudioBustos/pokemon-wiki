@@ -1,6 +1,6 @@
 import { getPokemon } from "@service/getPokemon";
 import { getPokemonDescription } from "@service/getPokemonDescription";
-import { useQuery } from "@tanstack/react-query";
+import { skipToken, useQuery } from "@tanstack/react-query";
 import { ReactNode, useEffect } from "react";
 import { DataContext } from "./data.context";
 import { getEvolutionTree } from "@service/getEvolutionTree";
@@ -28,8 +28,7 @@ export const DataProvider = ({ pokemonId, children }: DataProviderProps) => {
 
   const { data: evolutionData, isLoading: loadingEvolutionData, error: errorEvolutionData} = useQuery({
     queryKey: ['pokemon', pokemonId, 'evolution-chain'],
-    queryFn: () => getEvolutionTree(descriptionData!.evolution_chain_url),
-    enabled: !!descriptionData
+    queryFn: descriptionData ? () => getEvolutionTree(descriptionData!.evolution_chain_url) : skipToken,
   });
 
   useEffect(() => {

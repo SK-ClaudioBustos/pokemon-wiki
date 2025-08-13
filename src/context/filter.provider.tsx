@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useMemo } from "react";
 import { FilterContext } from "./filter.context";
 import { useQuery } from "@tanstack/react-query";
 import { getPokemonList } from "@service/getPokemonList";
@@ -32,21 +32,35 @@ export const FilterProvider = ({ children }: FilterProps) => {
     queryFn: () => getGenerationsOptions(),
   });
 
+  const contextValue = useMemo(
+    () => ({
+      search,
+      pokemonGeneration,
+      pokemonList,
+      loadingPokemonList,
+      errorPokemonList,
+      generations,
+      loadingGenerations,
+      errorGenerations,
+      setPokemonGeneration,
+      setSearch,
+    }),
+    [
+      search,
+      pokemonGeneration,
+      pokemonList,
+      loadingPokemonList,
+      errorPokemonList,
+      generations,
+      loadingGenerations,
+      errorGenerations,
+      setPokemonGeneration,
+      setSearch,
+    ]
+  );
+
   return (
-    <FilterContext.Provider
-      value={{
-        search,
-        pokemonGeneration,
-        pokemonList,
-        loadingPokemonList,
-        errorPokemonList,
-        generations,
-        loadingGenerations,
-        errorGenerations,
-        setPokemonGeneration,
-        setSearch,
-      }}
-    >
+    <FilterContext.Provider value={contextValue}>
       {children}
     </FilterContext.Provider>
   );

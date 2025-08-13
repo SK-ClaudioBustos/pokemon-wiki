@@ -1,7 +1,7 @@
 import { getPokemon } from "@service/getPokemon";
 import { getPokemonDescription } from "@service/getPokemonDescription";
 import { skipToken, useQuery } from "@tanstack/react-query";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useMemo } from "react";
 import { DataContext } from "./data.context";
 import { getEvolutionTree } from "@service/getEvolutionTree";
 
@@ -21,14 +21,24 @@ export const DataProvider = ({ pokemonId, children }: DataProviderProps) => {
     staleTime: 1000 * 6 * 60 * 1,
   });
 
-  const { data: descriptionData, isLoading: loadingDescriptionData, error: errorDescriptionData} = useQuery({
+  const {
+    data: descriptionData,
+    isLoading: loadingDescriptionData,
+    error: errorDescriptionData,
+  } = useQuery({
     queryKey: ["pokemon", pokemonId, "description"],
     queryFn: () => getPokemonDescription(pokemonId),
   });
 
-  const { data: evolutionData, isLoading: loadingEvolutionData, error: errorEvolutionData} = useQuery({
-    queryKey: ['pokemon', pokemonId, 'evolution-chain'],
-    queryFn: descriptionData ? () => getEvolutionTree(descriptionData!.evolution_chain_url) : skipToken,
+  const {
+    data: evolutionData,
+    isLoading: loadingEvolutionData,
+    error: errorEvolutionData,
+  } = useQuery({
+    queryKey: ["pokemon", pokemonId, "evolution-chain"],
+    queryFn: descriptionData
+      ? () => getEvolutionTree(descriptionData.evolution_chain_url)
+      : skipToken,
   });
 
   useEffect(() => {
@@ -39,21 +49,32 @@ export const DataProvider = ({ pokemonId, children }: DataProviderProps) => {
     }
   }, [loadingPokemonData]);
 
+  const contextValue = useMemo(
+    () => ({
+      pokemonData,
+      loadingPokemonData,
+      errorPokemonData,
+      descriptionData,
+      loadingDescriptionData,
+      errorDescriptionData,
+      evolutionData,
+      loadingEvolutionData,
+      errorEvolutionData,
+    }),
+    [
+      pokemonData,
+      loadingPokemonData,
+      errorPokemonData,
+      descriptionData,
+      loadingDescriptionData,
+      errorDescriptionData,
+      evolutionData,
+      loadingEvolutionData,
+      errorEvolutionData,
+    ]
+  );
+
   return (
-    <DataContext.Provider
-      value={{
-        pokemonData,
-        loadingPokemonData,
-        errorPokemonData,
-        descriptionData,
-        loadingDescriptionData,
-        errorDescriptionData,
-        evolutionData,
-        loadingEvolutionData,
-        errorEvolutionData,
-      }}
-    >
-      {children}
-    </DataContext.Provider>
+    <DataContext.Provider value={contextValue}>{children}</DataContext.Provider>
   );
 };
